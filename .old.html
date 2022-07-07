@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>DOTXBT</title>
+</head>
+<body>
+    <div class="flex flex-col w-full h-[500px] bg-cyan-500">
+        <h1>Hello</h1>
+        <div id="renderhere"></div>
+    </div>
+    <script>
+        let data = [
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+            {
+                name: "Sabituddin Bigbang",
+                address: "Jl. antariksa no. IXCCV",
+                hp: "9287853627375298"
+            },
+        ]
+        const renderHere = document.getElementById('renderhere');
+        
+        // element
+        function getElement(el) {
+            var item = document.createElement('div');
+            item.innerText = el.name;
+        }
+
+        data.forEach((e) => renderHere.appendChild(getElement(e)));
+    </script>
+</body>
+</html>

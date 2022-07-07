@@ -1,12 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Helloooo</h1>
-</body>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="index.css" />
+        <title>Example.com</title>
+    </head>
+    <body>
+        <div id="root" />
+        
+        <script>
+            function Item(title, desc) {
+                var container = document.createElement("div");
+                container.classList = "content-item";
+
+                var imageView = document.createElement("img");
+                imageView.classList = "avatar";
+                imageView.src =
+                    "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png";
+
+                var titleContainer = document.createElement("div");
+                titleContainer.classList = "title-container";
+
+                var titleText = document.createElement("p");
+                titleText.classList = "title";
+                titleText.innerText = title;
+                titleContainer.appendChild(titleText);
+
+                var descText = document.createElement("p");
+                descText.classList = "description";
+                descText.innerText = desc;
+                titleContainer.appendChild(descText);
+
+                container.appendChild(imageView);
+                container.appendChild(titleContainer);
+
+                return container;
+            }
+
+            function ListContent() {
+                var parentDiv = document.createElement("div");
+                parentDiv.classList = "content-container";
+
+                for (let i = 0; i < 20; i++) {
+                    parentDiv.appendChild(
+                        Item(
+                            "Hello World From - " + i,
+                            "Lorem ipsum sir dolor amet ...."
+                        )
+                    );
+                }
+                return parentDiv;
+            }
+
+            function ModalHeader(title, onCloseListener) {
+                var headerContainer = document.createElement("div");
+                headerContainer.classList = "header-container";
+
+                var headerTitle = document.createElement("p");
+                headerTitle.classList = "header-title";
+                headerTitle.innerText = title;
+                headerContainer.appendChild(headerTitle);
+
+                var closeButton = document.createElement("button");
+                closeButton.classList = "close-button";
+                closeButton.innerHTML = "<span>&times;</span>";
+                closeButton.onclick = onCloseListener;
+                headerContainer.appendChild(closeButton);
+
+                return headerContainer;
+            }
+
+            function ModalFooter() {
+                var footerContainer = document.createElement("div");
+                footerContainer.classList = "footer-container";
+                var footerText = document.createElement("p");
+                footerText.innerText =
+                    "Copyright©" +
+                    new Date().getFullYear() +
+                    " Example.com, All right reserved";
+                footerContainer.appendChild(footerText);
+                return footerContainer;
+            }
+
+            function ModalContent(headerTitle, closeListener) {
+                var modalContent = document.createElement("div");
+                modalContent.classList = "modal-content";
+                modalContent.appendChild(
+                    ModalHeader(headerTitle, closeListener)
+                );
+                modalContent.appendChild(ListContent());
+                modalContent.appendChild(ModalFooter());
+
+                return modalContent;
+            }
+
+            function App() {
+                var appContainer = document.createElement("div");
+                appContainer.classList = "main-container";
+                appContainer.innerHTML = "<h1 class='hello'>Modal Test :)</h1>";
+
+                var modalContainer = document.createElement("div");
+                modalContainer.classList = "modal";
+                modalContainer.appendChild(
+                    ModalContent("List Example", () => {
+                        modalContainer.style.display = "none";
+                    })
+                );
+
+                var buttonModal = document.createElement("button");
+                buttonModal.classList = "show-button";
+                buttonModal.innerHTML = "<span class='close'>Show Modal</span>";
+                buttonModal.onclick = (e) => {
+                    modalContainer.style.display = "block";
+                };
+
+                window.onclick = function (event) {
+                    if (event.target == modalContainer) {
+                        modalContainer.style.display = "none";
+                    }
+                };
+
+                window.onkeydown = function (e) {
+                    if (e.key === "Escape") {
+                        modalContainer.style.display = "none";
+                    }
+                };
+
+                appContainer.appendChild(buttonModal);
+                appContainer.appendChild(modalContainer);
+                return appContainer;
+            }
+
+            var root = document.getElementById("root");
+            root.appendChild(App());
+        </script>
+    </body>
 </html>
