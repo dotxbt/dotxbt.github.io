@@ -47,7 +47,7 @@ code {
 }
 
 .header-container .close-button {
-    outlines: none;
+    outline: none;
     width: 46px;
     height: 46px;
     border: none;
@@ -139,7 +139,7 @@ code {
 }
 
 .show-button {
-    outlines: none;
+    outline: none;
     border: none;
     padding: 18px 42px;
     border-radius: 42px;
