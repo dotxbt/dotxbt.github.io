@@ -1,137 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="index.css" />
-        <title>Example.com</title>
-    </head>
-    <body>
-        <div id="root" />
-        <script>
-            function Item(title, desc) {
-                var container = document.createElement("div");
-                container.classList = "content-item";
-
-                var imageView = document.createElement("img");
-                imageView.classList = "avatar";
-                imageView.src =
-                    "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png";
-
-                var titleContainer = document.createElement("div");
-                titleContainer.classList = "title-container";
-
-                var titleText = document.createElement("p");
-                titleText.classList = "title";
-                titleText.innerText = title;
-                titleContainer.appendChild(titleText);
-
-                var descText = document.createElement("p");
-                descText.classList = "description";
-                descText.innerText = desc;
-                titleContainer.appendChild(descText);
-
-                container.appendChild(imageView);
-                container.appendChild(titleContainer);
-
-                return container;
-            }
-
-            function ListContent() {
-                var parentDiv = document.createElement("div");
-                parentDiv.classList = "content-container";
-
-                for (let i = 0; i < 20; i++) {
-                    parentDiv.appendChild(
-                        Item(
-                            "Hello World From - " + i,
-                            "Lorem ipsum sir dolor amet ...."
-                        )
-                    );
-                }
-                return parentDiv;
-            }
-
-            function ModalHeader(title, onCloseListener) {
-                var headerContainer = document.createElement("div");
-                headerContainer.classList = "header-container";
-
-                var headerTitle = document.createElement("p");
-                headerTitle.classList = "header-title";
-                headerTitle.innerText = title;
-                headerContainer.appendChild(headerTitle);
-
-                var closeButton = document.createElement("button");
-                closeButton.classList = "close-button";
-                closeButton.innerHTML = "<span>&times;</span>";
-                closeButton.onclick = onCloseListener;
-                headerContainer.appendChild(closeButton);
-
-                return headerContainer;
-            }
-
-            function ModalFooter() {
-                var footerContainer = document.createElement("div");
-                footerContainer.classList = "footer-container";
-                var footerText = document.createElement("p");
-                footerText.innerText =
-                    "Copyright©" +
-                    new Date().getFullYear() +
-                    " Example.com, All right reserved";
-                footerContainer.appendChild(footerText);
-                return footerContainer;
-            }
-
-            function ModalContent(headerTitle, closeListener) {
-                var modalContent = document.createElement("div");
-                modalContent.classList = "modal-content";
-                modalContent.appendChild(
-                    ModalHeader(headerTitle, closeListener)
-                );
-                modalContent.appendChild(ListContent());
-                modalContent.appendChild(ModalFooter());
-
-                return modalContent;
-            }
-
-            function App() {
-                var appContainer = document.createElement("div");
-                appContainer.classList = "main-container";
-                appContainer.innerHTML = "<h1 class='hello'>Modal Test :)</h1>";
-
-                var modalContainer = document.createElement("div");
-                modalContainer.classList = "modal";
-                modalContainer.appendChild(
-                    ModalContent("List Example", () => {
-                        modalContainer.style.display = "none";
-                    })
-                );
-
-                var buttonModal = document.createElement("button");
-                buttonModal.classList = "show-button";
-                buttonModal.innerHTML = "<span class='close'>Show Modal</span>";
-                buttonModal.onclick = (e) => {
-                    modalContainer.style.display = "block";
-                };
-
-                window.onclick = function (event) {
-                    if (event.target == modalContainer) {
-                        modalContainer.style.display = "none";
-                    }
-                };
-
-                window.onkeydown = function (e) {
-                    if (e.key === "Escape") {
-                        modalContainer.style.display = "none";
-                    }
-                };
-
-                appContainer.appendChild(buttonModal);
-                appContainer.appendChild(modalContainer);
-                return appContainer;
-            }
-
-            var root = document.getElementById("root");
-            root.appendChild(App());
-        </script>
-    </body>
+<html class="scroll-smooth">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>DOT XBT</title>
+  </head>
+  <body>
+    <div id="root" />
+    <script type="text/javascript" src="root.js"></script>
+  </body>
 </html>
