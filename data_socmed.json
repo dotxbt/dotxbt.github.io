@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "fa-brands fa-instagram",
+    "title": "Instagram",
+    "color": "text-fuchsia-500",
+    "url": "href='https://instagram.com/sabituddin_bigbang' target='_blank' rel='noopener noreferrer'"
+  },
+  {
+    "icon": "fa-brands fa-facebook",
+    "title": "Facebook",
+    "color": "text-blue-500",
+    "url": ""
+  },
+  {
+    "icon": "fa-brands fa-twitter",
+    "title": "Twitter",
+    "color": "text-cyan-500",
+    "url": ""
+  },
+  {
+    "icon": "fa-brands fa-tiktok",
+    "title": "Tik Tok",
+    "color": "text-pink-500",
+    "url": ""
+  },
+  {
+    "icon": "fa-brands fa-youtube",
+    "title": "Youtube",
+    "color": "text-red-500",
+    "url": ""
+  },
+  {
+    "icon": "fa-brands fa-github",
+    "title": "Github",
+    "color": "text-slate-300",
+    "url": "href='https://github.com/dotxbt' target='_blank' rel='noopener noreferrer'"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Tailwind CSS",
+    "logo": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg"
+  },
+  {
+    "title": "Styled Component",
+    "logo": "https://styled-components.com/icon.png"
+  },
+  {
+    "title": "Ant Design",
+    "logo": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+  },
+  {
+    "title": "React JS",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+  },
+  {
+    "title": "Redux",
+    "logo": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+  },
+  {
+    "title": "Android",
+    "logo": "https://developer.android.com/static/images/brand/Android_Robot_200.png"
+  },
+  {
+    "title": "Flutter",
+    "logo": "https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg"
+  },
+  {
+    "title": "BloC",
+    "logo": "https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/bloc_logo_full.png"
+  },
+  {
+    "title": "React Native",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+  },
+  {
+    "title": "Next JS",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg"
+  },
+  {
+    "title": "Nest JS",
+    "logo": "https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg"
+  },
+  {
+    "title": "Arduino",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg"
+  }
+]

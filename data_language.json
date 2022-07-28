@@ -1,0 +1,55 @@
+[
+  {
+    "icon": "fa-brands fa-html5",
+    "title": "HTML",
+    "color": "text-orange-500"
+  },
+  {
+    "icon": "fa-brands fa-css3",
+    "title": "CSS 3",
+    "color": "text-cyan-500"
+  },
+  {
+    "icon": "fa-brands fa-js",
+    "title": "Javascript",
+    "color": "text-yellow-500"
+  },
+  {
+    "icon": "fa-solid fa-c",
+    "title": "C/C++",
+    "color": "text-yellow-500"
+  },
+  {
+    "icon": "fa-brands fa-python",
+    "title": "Python",
+    "color": "text-sky-500"
+  },
+  {
+    "icon": "fa-brands fa-java",
+    "title": "Java",
+    "color": "text-red-500"
+  },
+  {
+    "icon": "fa-solid fa-code",
+    "title": "Dart",
+    "color": "text-blue-500",
+    "logo": "https://avatars.githubusercontent.com/u/1609975?s=200&v=4"
+  },
+  {
+    "icon": "fa-brands fa-golang",
+    "title": "GoLang",
+    "color": "text-cyan-500"
+  },
+  {
+    "icon": "fa-brands fa-kotlin",
+    "title": "Kotlin",
+    "color": "text-Indigo-500",
+    "logo": "https://abrudz.github.io/logos/Kotlin.svg"
+  },
+  {
+    "icon": " ",
+    "title": "Free Pascal",
+    "color": "text-Indigo-500",
+    "logo": "https://www.freepascal.org/pic/logo.gif"
+  }
+]

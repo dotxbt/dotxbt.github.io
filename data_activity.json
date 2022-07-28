@@ -1,0 +1,42 @@
+[
+    {
+      "icon": "fa-solid fa-bed",
+      "title": "Sleep",
+      "color": "text-orange-500"
+    },
+    {
+      "icon": "fa-solid fa-dumbbell",
+      "title": "Workout",
+      "color": "text-teal-500"
+    },
+    {
+      "icon": "fa-solid fa-utensils",
+      "title": "Eat",
+      "color": "text-sky-500"
+    },
+    {
+      "icon": "fa-solid fa-laptop-code",
+      "title": "Coding",
+      "color": "text-red-500"
+    },
+    {
+      "icon": "fa-solid fa-motorcycle",
+      "title": "Touring",
+      "color": "text-yellow-500"
+    },
+    {
+      "icon": "fa-solid fa-volleyball",
+      "title": "Volleyball",
+      "color": "text-blue-500"
+    },
+    {
+      "icon": "fa-solid fa-hands-praying",
+      "title": "Pray",
+      "color": "text-pink-500"
+    },
+    {
+      "icon": "fa-solid fa-repeat",
+      "title": "Repeat",
+      "color": "text-purple-400"
+    }
+  ]
