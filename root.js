@@ -21,7 +21,7 @@ const ProfileCard = () => {
   card.innerHTML = `
   
     <div class="relative flex flex-col">
-       <img class="w-[220px] h-[220px] lg:w-[300px] lg:h-[300px] object-cover rounded-full bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-3 md:p-4 m-10" src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.6435-9/198661030_4377617105595981_5524873156723026352_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGgVoStKxX5cr5_DTaPjnr3R32DTe7whR9HfYNN7vCFH96yFoM96q5t410wYcD15L64OIo7QOFKgKezU0ijk9YN&_nc_ohc=EAxzAsVGNwcAX_A6NLH&_nc_ht=scontent-sin6-1.xx&oh=00_AT__pdcvdVsfiQomO6nDGm0OT_4HBNrzibbWP2ChZ_7HMQ&oe=63076B27" />
+       <img class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] object-cover rounded-full bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-3 md:p-4 m-10" src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.6435-9/198661030_4377617105595981_5524873156723026352_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGgVoStKxX5cr5_DTaPjnr3R32DTe7whR9HfYNN7vCFH96yFoM96q5t410wYcD15L64OIo7QOFKgKezU0ijk9YN&_nc_ohc=EAxzAsVGNwcAX_A6NLH&_nc_ht=scontent-sin6-1.xx&oh=00_AT__pdcvdVsfiQomO6nDGm0OT_4HBNrzibbWP2ChZ_7HMQ&oe=63076B27" />
        <div class="flex md:h-[46px] md:w-[46px] h-[36px] w-[36px] absolute md:top-[240px] md:left-[288px] top-[190px] left-[218px]">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full md:h-[46px] md:w-[46px] h-[36px] w-[36px] bg-pink-500"></span>
