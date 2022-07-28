@@ -20,6 +20,11 @@ const dataCoding = [
     color: "text-yellow-500",
   },
   {
+    icon: "fa-brands fa-python",
+    title: "Python",
+    color: "text-sky-500",
+  },
+  {
     icon: "fa-brands fa-java",
     title: "Java",
     color: "text-red-500",
@@ -28,11 +33,24 @@ const dataCoding = [
     icon: "fa-solid fa-code",
     title: "Dart",
     color: "text-blue-500",
+    url: "https://avatars.githubusercontent.com/u/1609975?s=200&v=4",
   },
   {
     icon: "fa-brands fa-golang",
     title: "GoLang",
     color: "text-cyan-500",
+  },
+  {
+    icon: "fa-brands fa-kotlin",
+    title: "Kotlin",
+    color: "text-Indigo-500",
+    url: "https://abrudz.github.io/logos/Kotlin.svg",
+  },
+  {
+    icon: " ",
+    title: "Free Pascal",
+    color: "text-Indigo-500",
+    url: "https://www.freepascal.org/pic/logo.gif",
   },
 ];
 
@@ -80,6 +98,14 @@ const dataFrameworks = [
     logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg",
   },
   {
+    title: "Styled Component",
+    logo: "https://styled-components.com/icon.png",
+  },
+  {
+    title: "Ant Design",
+    logo: "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+  },
+  {
     title: "React JS",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
@@ -96,6 +122,10 @@ const dataFrameworks = [
     logo: "https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg",
   },
   {
+    title: "BloC",
+    logo: "https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/bloc_logo_full.png",
+  },
+  {
     title: "React Native",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
@@ -106,6 +136,10 @@ const dataFrameworks = [
   {
     title: "Nest JS",
     logo: "https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg",
+  },
+  {
+    title: "Arduino",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg",
   },
 ];
 
@@ -179,7 +213,7 @@ const SocMedCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 bg-slate-700 w-full md:w-auto md:bg-transparent`;
-  cardChild.classList = `max-w-[1360px] flex flex-col w-full justify-around items-start p-4 flex-1`;
+  cardChild.classList = `max-w-[1024px] flex flex-col w-full justify-around items-start p-4 flex-1`;
   cardChild.innerHTML = dataSocMed.map(
     (e) => `
         <a ${e.url} class="flex flex-row cursor-pointer hover:animate-bounce items-center space-x-4  m-4 p-4 rounded-xl flex-1">
@@ -197,17 +231,17 @@ const FrameworkCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-200`;
-  cardChild.classList = `max-w-[1360px] flex flex-wrap w-full justify-around items-start p-4 flex-1`;
+  cardChild.classList = `max-w-[1024px] flex flex-wrap w-full space-x-4 space-y-4 justify-center items-start p-4 flex-1`;
   cardChild.innerHTML = dataFrameworks.map(
     (e) => `
-      <a ${e.url} class="flex flex-col cursor-pointer items-center space-y-4 hover:animate-bounce  m-4 p-4 rounded-xl flex-1">
-        <img class=" h-[46px] w-[46px] object-contain" src="${e.logo}"/> 
+      <a ${e.url} class="flex flex-col cursor-pointer items-center space-y-4 min-w-[130px] hover:animate-bounce  m-4 p-4 rounded-xl flex-1">
+        <img class=" h-[56px] w-[56px] object-contain" src="${e.logo}"/> 
         <p class="text-xl text-slate-600 text-center">${e.title}</p>
       </a>
       `
   );
   cardChild.innerHTML = cardChild.innerHTML.replace(/,/g, "");
-  card.innerHTML = `<div class="text-2xl text-slate-600 font-medium mb-4"><h1>F R A M E W O R K S</h1></div>`;
+  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-600 font-medium mb-4"><h1>F R A M E W O R K S   |   L I B R A R I E S</h1></div>`;
   card.append(cardChild);
   return card;
 };
@@ -225,7 +259,7 @@ const ActivitiesCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-600`;
-  cardChild.classList = `max-w-[1360px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
+  cardChild.classList = `max-w-[1024px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
   cardChild.innerHTML = dataActivities.map(
     (e) => `
         <div class="flex items-center hover:animate-bounce flex-col m-4 p-4 rounded-xl flex-1">
@@ -235,7 +269,7 @@ const ActivitiesCard = () => {
     `
   );
   cardChild.innerHTML = cardChild.innerHTML.replace(/,/g, "");
-  card.innerHTML = `<div class="text-2xl text-slate-200 font-medium mb-4"><h1>A C T I V I T I E S</h1></div>`;
+  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-200 font-medium mb-4"><h1>A C T I V I T I E S</h1></div>`;
   card.append(cardChild);
   return card;
 };
@@ -244,17 +278,21 @@ const CodingCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-100`;
-  cardChild.classList = `max-w-[1360px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
+  cardChild.classList = `max-w-[1024px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
   cardChild.innerHTML = dataCoding.map(
     (e) => `
-        <div class="flex items-center hover:animate-bounce flex-col m-4 p-4 rounded-xl flex-1">
-            <i class="${e.icon} text-[46px] text-center w-[56px] ${e.color}"></i>    
-            <p class="text-2xl mt-6 text-slate-600">${e.title}</p>
+        <div class="flex items-center hover:animate-bounce min-w-[130px] flex-col m-4 p-4 rounded-xl flex-1">
+            ${
+              e.url
+                ? `<img class="w-[46px] h-[46px] w-[56px] object-contain" src="${e.url}"></i>`
+                : `<i class="${e.icon} text-[46px] text-center w-[56px] ${e.color}"></i>`
+            }    
+            <p class="text-xl mt-6 text-slate-600">${e.title}</p>
         </div>
     `
   );
   cardChild.innerHTML = cardChild.innerHTML.replace(/,/g, "");
-  card.innerHTML = `<div class="text-2xl text-slate-600 font-medium mb-4"><h1>N G O D I N G</h1></div>`;
+  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-600 font-medium mb-4"><h1>N G O D I N G</h1></div>`;
   card.append(cardChild);
   return card;
 };
