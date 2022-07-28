@@ -297,7 +297,7 @@ const CodingCard = () => {
     `
   );
   cardChild.innerHTML = cardChild.innerHTML.replace(/,/g, "");
-  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-600 font-medium mb-4"><h1>L A N G U A G E | I N T E R P E T E R</h1></div>`;
+  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-600 font-medium mb-4"><h1>L A N G U A G E S | I N T E R P R E T E R S</h1></div>`;
   card.append(cardChild);
   return card;
 };
