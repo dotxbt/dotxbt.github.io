@@ -66,6 +66,11 @@ const dataActivities = [
     color: "text-teal-500",
   },
   {
+    icon: "fa-solid fa-utensils",
+    title: "Eat",
+    color: "text-sky-500",
+  },
+  {
     icon: "fa-solid fa-laptop-code",
     title: "Coding",
     color: "text-red-500",
@@ -213,7 +218,7 @@ const SocMedCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 bg-slate-700 w-full md:w-auto md:bg-transparent`;
-  cardChild.classList = `max-w-[1024px] flex flex-col w-full justify-around items-start p-4 flex-1`;
+  cardChild.classList = `max-w-[1360px] flex flex-col w-full justify-around items-start p-4 flex-1`;
   cardChild.innerHTML = dataSocMed.map(
     (e) => `
         <a ${e.url} class="flex flex-row cursor-pointer hover:animate-bounce items-center space-x-4  m-4 p-4 rounded-xl flex-1">
@@ -230,12 +235,12 @@ const SocMedCard = () => {
 const FrameworkCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
-  card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-200`;
-  cardChild.classList = `max-w-[1024px] flex flex-wrap w-full space-x-4 space-y-4 justify-center items-start p-4 flex-1`;
+  card.classList = `flex flex-col w-full justify-start items-center p-2 md:p-8 bg-slate-200`;
+  cardChild.classList = `flex flex-wrap py-4 px-4 md:px-10`;
   cardChild.innerHTML = dataFrameworks.map(
     (e) => `
-      <a ${e.url} class="flex flex-col cursor-pointer items-center space-y-4 min-w-[130px] hover:animate-bounce  m-4 p-4 rounded-xl flex-1">
-        <img class=" h-[56px] w-[56px] object-contain" src="${e.logo}"/> 
+      <a ${e.url} class="flex flex-col cursor-pointer items-center min-w-[100px] hover:animate-bounce  m-4 p-4 rounded-xl flex-1">
+        <img class=" h-[56px] w-[56px] object-contain" src="${e.logo}" width={64} height={64}/> 
         <p class="text-xl text-slate-600 text-center">${e.title}</p>
       </a>
       `
@@ -259,10 +264,10 @@ const ActivitiesCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-600`;
-  cardChild.classList = `max-w-[1024px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
+  cardChild.classList = `flex flex-wrap py-4 px-4 md:px-10`;
   cardChild.innerHTML = dataActivities.map(
     (e) => `
-        <div class="flex items-center hover:animate-bounce flex-col m-4 p-4 rounded-xl flex-1">
+        <div class="flex items-center hover:animate-bounce min-w-[100px] flex-col m-4 p-4 rounded-xl flex-1">
             <i class="${e.icon} text-[46px] text-center w-[56px] ${e.color}"></i>    
             <p class="text-xl mt-6 text-slate-300">${e.title}</p>
         </div>
@@ -277,11 +282,11 @@ const ActivitiesCard = () => {
 const CodingCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
-  card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-100`;
-  cardChild.classList = `max-w-[1024px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
+  card.classList = `flex flex-col w-full justify-start items-center p-4 md:p-8 flex-1 bg-slate-100`;
+  cardChild.classList = `flex flex-wrap py-4 px-4 md:px-10`;
   cardChild.innerHTML = dataCoding.map(
     (e) => `
-        <div class="flex items-center hover:animate-bounce min-w-[130px] flex-col m-4 p-4 rounded-xl flex-1">
+        <div class="flex items-center hover:animate-bounce min-w-[100px]  flex-col m-4 p-4 rounded-xl flex-1">
             ${
               e.url
                 ? `<img class="w-[46px] h-[46px] w-[56px] object-contain" src="${e.url}"></i>`
@@ -292,7 +297,7 @@ const CodingCard = () => {
     `
   );
   cardChild.innerHTML = cardChild.innerHTML.replace(/,/g, "");
-  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-600 font-medium mb-4"><h1>N G O D I N G</h1></div>`;
+  card.innerHTML = `<div class="text-lg md:text-2xl text-slate-600 font-medium mb-4"><h1>L A N G U A G E | I N T E R P E T E R</h1></div>`;
   card.append(cardChild);
   return card;
 };
