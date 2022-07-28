@@ -50,7 +50,7 @@ const dataActivities = [
   {
     icon: "fa-solid fa-laptop-code",
     title: "Coding",
-    color: "text-yellow-500",
+    color: "text-red-500",
   },
   {
     icon: "fa-solid fa-motorcycle",
@@ -60,7 +60,7 @@ const dataActivities = [
   {
     icon: "fa-solid fa-volleyball",
     title: "Volleyball",
-    color: "text-yellow-500",
+    color: "text-blue-500",
   },
   {
     icon: "fa-solid fa-hands-praying",
