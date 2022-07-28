@@ -129,6 +129,12 @@ const dataSocMed = [
     url: "",
   },
   {
+    icon: "fa-brands fa-tiktok",
+    title: "Tik Tok",
+    color: "text-pink-500",
+    url: "",
+  },
+  {
     icon: "fa-brands fa-youtube",
     title: "Youtube",
     color: "text-red-500",
@@ -152,9 +158,16 @@ const HeaderCard = () => {
 
 const ProfileCard = () => {
   const card = document.createElement("div");
-  card.classList = `flex flex-col min-h-screen justify-center items-center p-4 bg-gray-800`;
+  card.classList = `flex flex-col min-h-screen justify-center items-center p-4 bg-slate-800`;
   card.innerHTML = `
-    <img class="w-[220px] h-[220px] lg:w-[300px] lg:h-[300px] object-cover rounded-full hover:animate-bounce bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-4 m-10" src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.6435-9/198661030_4377617105595981_5524873156723026352_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGgVoStKxX5cr5_DTaPjnr3R32DTe7whR9HfYNN7vCFH96yFoM96q5t410wYcD15L64OIo7QOFKgKezU0ijk9YN&_nc_ohc=EAxzAsVGNwcAX_A6NLH&_nc_ht=scontent-sin6-1.xx&oh=00_AT__pdcvdVsfiQomO6nDGm0OT_4HBNrzibbWP2ChZ_7HMQ&oe=63076B27" />
+  
+    <div class="relative flex flex-col">
+       <img class="w-[220px] h-[220px] lg:w-[300px] lg:h-[300px] object-cover rounded-full bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-3 md:p-4 m-10" src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.6435-9/198661030_4377617105595981_5524873156723026352_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGgVoStKxX5cr5_DTaPjnr3R32DTe7whR9HfYNN7vCFH96yFoM96q5t410wYcD15L64OIo7QOFKgKezU0ijk9YN&_nc_ohc=EAxzAsVGNwcAX_A6NLH&_nc_ht=scontent-sin6-1.xx&oh=00_AT__pdcvdVsfiQomO6nDGm0OT_4HBNrzibbWP2ChZ_7HMQ&oe=63076B27" />
+       <div class="flex md:h-[46px] md:w-[46px] h-[36px] w-[36px] absolute md:top-[240px] md:left-[288px] top-[190px] left-[218px]">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full md:h-[46px] md:w-[46px] h-[36px] w-[36px] bg-pink-500"></span>
+        </div>
+      </div>
     <div class="flex flex-col items-center pb-0 md:pb-10">
         <h1 class="text-xl text-slate-300 font-medium">Hello, I'm <a href="https://instagram.com/sabituddin_bigbang" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-fuchsia-200">Sabituddin Bigbang</a></h1>
         <p class="text-lg mt-2 italic text-slate-300">"Do what you love, love what you do"</p>
@@ -165,12 +178,12 @@ const ProfileCard = () => {
 const SocMedCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
-  card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 bg-gray-900 w-full md:w-auto md:bg-transparent`;
+  card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 bg-slate-700 w-full md:w-auto md:bg-transparent`;
   cardChild.classList = `max-w-[1360px] flex flex-col w-full justify-around items-start p-4 flex-1`;
   cardChild.innerHTML = dataSocMed.map(
     (e) => `
-        <a ${e.url} class="flex flex-row cursor-pointer items-center space-x-4  m-4 p-4 rounded-xl flex-1">
-            <i class="${e.icon} text-[32px] ${e.color}"></i>    
+        <a ${e.url} class="flex flex-row cursor-pointer hover:animate-bounce items-center space-x-4  m-4 p-4 rounded-xl flex-1">
+            <i class="${e.icon} text-[32px] text-center w-[46px] ${e.color}"></i>    
             <p class="text-2xl text-slate-400">${e.title}</p>
         </a>
     `
@@ -184,11 +197,11 @@ const FrameworkCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
   card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-200`;
-  cardChild.classList = `max-w-[1360px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
+  cardChild.classList = `max-w-[1360px] flex flex-wrap w-full justify-around items-start p-4 flex-1`;
   cardChild.innerHTML = dataFrameworks.map(
     (e) => `
-      <a ${e.url} class="flex flex-col cursor-pointer items-center space-y-4  m-4 p-4 rounded-xl flex-1">
-        <img class=" h-[80px] w-[80px] object-contain" src="${e.logo}"/> 
+      <a ${e.url} class="flex flex-col cursor-pointer items-center space-y-4 hover:animate-bounce  m-4 p-4 rounded-xl flex-1">
+        <img class=" h-[46px] w-[46px] object-contain" src="${e.logo}"/> 
         <p class="text-xl text-slate-600 text-center">${e.title}</p>
       </a>
       `
@@ -211,13 +224,13 @@ const FooterCard = () => {
 const ActivitiesCard = () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
-  card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-gray-700`;
+  card.classList = `flex flex-col w-full justify-around items-center p-4 md:p-8 flex-1 bg-slate-600`;
   cardChild.classList = `max-w-[1360px] flex flex-wrap w-full justify-around items-center p-4 flex-1`;
   cardChild.innerHTML = dataActivities.map(
     (e) => `
         <div class="flex items-center hover:animate-bounce flex-col m-4 p-4 rounded-xl flex-1">
-            <i class="${e.icon} text-[64px] ${e.color}"></i>    
-            <p class="text-2xl mt-6 text-slate-400">${e.title}</p>
+            <i class="${e.icon} text-[46px] text-center w-[56px] ${e.color}"></i>    
+            <p class="text-xl mt-6 text-slate-300">${e.title}</p>
         </div>
     `
   );
@@ -235,7 +248,7 @@ const CodingCard = () => {
   cardChild.innerHTML = dataCoding.map(
     (e) => `
         <div class="flex items-center hover:animate-bounce flex-col m-4 p-4 rounded-xl flex-1">
-            <i class="${e.icon} text-[100px] ${e.color}"></i>    
+            <i class="${e.icon} text-[46px] text-center w-[56px] ${e.color}"></i>    
             <p class="text-2xl mt-6 text-slate-600">${e.title}</p>
         </div>
     `
