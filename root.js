@@ -9,7 +9,7 @@ document.getElementById("root").innerHTML = `
 // HEADER COMPONENT
 const HeaderCard = async () => {
   const card = document.createElement("div");
-  card.classList = `flex flex-col md:flex-row min-h-screen w-full justify-center items-center flex-1 bg-gray-800`;
+  card.classList = `flex flex-col md:flex-row min-h-screen w-full justify-center items-center flex-1 bg-slate-800`;
   card.appendChild(ProfileCard());
   card.appendChild(await SocMedCard());
   return card;
@@ -17,7 +17,7 @@ const HeaderCard = async () => {
 
 const ProfileCard = () => {
   const card = document.createElement("div");
-  card.classList = `flex flex-col min-h-screen justify-center items-center p-4 bg-slate-800`;
+  card.classList = `flex flex-col min-h-screen justify-center items-center p-4`;
   card.innerHTML = `
   
     <div class="relative flex flex-col">
