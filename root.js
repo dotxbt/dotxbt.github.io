@@ -21,7 +21,7 @@ const ProfileCard = () => {
   card.innerHTML = `
     <div class="relative flex flex-col">
        <img class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] object-cover rounded-full bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-3 md:p-4 m-10" 
-        src="./photo.jpg"
+        src="https://dotxbt.github.io/photo.jpg"
        />
        <div class="flex md:h-[46px] md:w-[46px] h-[36px] w-[36px] absolute md:top-[240px] md:left-[288px] top-[190px] left-[218px]">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
