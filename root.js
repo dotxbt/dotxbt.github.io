@@ -10,17 +10,19 @@ document.getElementById("root").innerHTML = `
 const HeaderCard = async () => {
   const card = document.createElement("div");
   card.classList = `flex flex-col md:flex-row min-h-screen w-full justify-center items-center flex-1 bg-slate-800`;
-  card.appendChild(ProfileCard());
+  card.appendChild(await ProfileCard());
   card.appendChild(await SocMedCard());
   return card;
 };
 
 const ProfileCard = async () => {
+  const cardParent = document.createElement("div");
   const card = document.createElement("div");
   card.classList = `flex flex-col min-h-screen justify-center items-center p-4`;
   await fetch("./asset.json")
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       card.innerHTML = `
     <div class="relative flex flex-col">
        <img class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] object-cover rounded-full bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-3 md:p-4 m-10" 
@@ -36,8 +38,8 @@ const ProfileCard = async () => {
         <p class="text-lg mt-2 italic text-slate-300">"Do what you love, love what you do"</p>
     </div>`;
     });
-
-  return card;
+  cardParent.append(card);
+  return cardParent;
 };
 
 const SocMedCard = async () => {
