@@ -12,9 +12,43 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>DOT XBT</title>
+    <style>
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #66666644 #66666644;
+      }
+
+      *::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: #222d2f;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: #1699ce;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      *::-webkit-scrollbar-corner {
+        background: none;
+        width: 0px;
+        height: 0px;
+      }
+
+      *::-webkit-scrollbar-thumb:hover {
+        background: #646a7266;
+      }
+    </style>
   </head>
   <body>
     <div id="root" />
-    <script type="text/javascript" src="https://dotxbt.github.io/root.js"></script>
+    <script
+      type="text/javascript"
+      src="https://dotxbt.github.io/root.js"
+    ></script>
   </body>
 </html>
