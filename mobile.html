@@ -117,7 +117,7 @@
     let itemContainerHScroll = document.createElement("div");
     itemContainerHScroll.classList = "flex flex-row items-center space-x-4 p-4";
     sideMenu.classList =
-        "absolute z[99] left-0  bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
+        "absolute z[99] left-0  bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-500";
 
     let itemContainerGrid = document.getElementById("grid-container");
 
@@ -140,11 +140,11 @@
         console.log(e.target)
         if (buttonMenu === e.target) {
             sideMenu.classList =
-                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] translate-x transition ease-in-out transition-all duration-1000";
+                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] translate-x transition ease-in-out transition-all duration-500";
             isShowMenu = true;
         } else if (!sideMenu.contains(e.target)) {
             sideMenu.classList =
-                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
+                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-500";
             isShowMenu = false;
         }
     });
