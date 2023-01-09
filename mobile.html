@@ -43,12 +43,12 @@
 </head>
 
 <body>
-    <div class="bg-slate-800 absolute top-0 bottom-0 flex flex-col items-center justify-center sm:p-2 left-0 right-0">
-        <div class="w-full h-full sm:h-auto sm:aspect-[10/19] relative sm:rounded-3xl overflow-hidden max-w-sm bg-slate-900">
-            <div class="p-4 bg-black hidden sm:flex">
+    <div class="bg-slate-800 absolute top-0 bottom-0 flex flex-col items-center justify-center md:p-2 left-0 right-0">
+        <div class="w-full h-full md:h-auto md:aspect-[10/19] relative md:rounded-3xl overflow-hidden max-w-sm bg-slate-900">
+            <div class="p-4 bg-black hidden md:flex">
                 <p class="text-white w-full text-center">Mobile Layout!</p>
             </div>
-            <div class="absolute bottom-0 top-0 sm:top-[58px] w-full overflow-auto">
+            <div class="absolute bottom-0 top-0 md:top-[58px] w-full overflow-auto">
                 <div class="flex flex-row items-center bg-slate-900/90 p-2 sticky top-0">
                     <button id="button-menu"
                         class="fa-solid fa-bars text-[20px] h-[46px] w-[46px] flex flex-row items-center justify-center text-slate-100"></button>
@@ -117,7 +117,7 @@
     let itemContainerHScroll = document.createElement("div");
     itemContainerHScroll.classList = "flex flex-row items-center space-x-4 p-4";
     sideMenu.classList =
-        "absolute z[99] left-0  bottom-0 flex flex-col items-center top-0 sm:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
+        "absolute z[99] left-0  bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
 
     let itemContainerGrid = document.getElementById("grid-container");
 
@@ -140,11 +140,11 @@
         console.log(e.target)
         if (buttonMenu === e.target) {
             sideMenu.classList =
-                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 sm:top-[58px] bg-slate-900 w-[200px] translate-x transition ease-in-out transition-all duration-1000";
+                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] translate-x transition ease-in-out transition-all duration-1000";
             isShowMenu = true;
         } else if (!sideMenu.contains(e.target)) {
             sideMenu.classList =
-                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 sm:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
+                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
             isShowMenu = false;
         }
     });
