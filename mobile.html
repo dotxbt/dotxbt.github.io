@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://dotxbt.github.io/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>DOT XBT-Mobile</title>
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #66666644 #66666644;
+        }
+
+        *::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #222d2f;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #1699ce;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        *::-webkit-scrollbar-corner {
+            background: none;
+            width: 0px;
+            height: 0px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: #646a7266;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-slate-800 absolute top-0 bottom-0 flex flex-col items-center justify-center sm:p-2 left-0 right-0">
+        <div class="w-full h-full sm:h-auto sm:aspect-[10/19] relative sm:rounded-3xl overflow-hidden max-w-sm bg-slate-900">
+            <div class="p-4 bg-black hidden sm:flex">
+                <p class="text-white w-full text-center">Mobile Layout!</p>
+            </div>
+            <div class="absolute bottom-0 top-0 sm:top-[58px] w-full overflow-auto">
+                <div class="flex flex-row items-center bg-slate-900/90 p-2 sticky top-0">
+                    <button id="button-menu"
+                        class="fa-solid fa-bars text-[20px] h-[46px] w-[46px] flex flex-row items-center justify-center text-slate-100"></button>
+                    <p class="text-white flex-1 text-center">My Apps</p>
+                    <div class="relative">
+                        <button
+                        class="fa-solid fa-bell text-[20px] h-[46px] w-[46px] flex flex-row items-center justify-center text-slate-100"></button>
+                        <div class="h-[8px] w-[8px] bg-red-500 rounded-full absolute top-[14px] left-[13px]"></div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="aspect-[9/5.5] w-full bg-amber-500 rounded-xl"></div>
+                </div>
+                <p class="text-slate-300 text-lg font-bold p-3">Horizontal Scroll</p>
+                <div class="w-full flex overflow-x-auto" id="horizontal-scroll"></div>
+                <p class="text-slate-300 text-lg font-bold p-3 mt-4">Grid Item</p>
+                <div class="grid grid-cols-2 gap-4 p-4" id="grid-container"></div>
+            </div>
+            <div id="side-menu">
+                <div class="h-[100px] w-[100px] m-4 rounded-full bg-indigo-500"></div>
+                <p class="text-xl text-teal-400 font-bold">X-APPS</p>
+                <div class="h-[1px] w-full bg-slate-600/70 my-6"></div>
+                <button class="w-full active:opacity-50 flex flex-row items-center space-x-4 px-4 py-3 text-slate-300">
+                    <p class="fa-solid text-teal-400 fa-dashboard"></p>
+                    <p>Dashboard</p>
+                </button>
+                <button class="w-full active:opacity-50 flex flex-row items-center space-x-4 px-4 py-3 text-slate-200">
+                    <p class="fa-solid text-pink-400 fa-archive"></p>
+                    <p>Archieves</p>
+                </button>
+                <button class="w-full active:opacity-50 flex flex-row items-center space-x-4 px-4 py-3 text-slate-200">
+                    <p class="fa-solid text-indigo-300 fa-microchip"></p>
+                    <p>Microchip</p>
+                </button>
+                <button class="w-full active:opacity-50 flex flex-row items-center space-x-4 px-4 py-3 text-slate-200">
+                    <p class="fa-solid text-orange-400 fa-address-book"></p>
+                    <p>Address Book</p>
+                </button>
+                <button class="w-full active:opacity-50 flex flex-row items-center space-x-4 px-4 py-3 text-slate-200">
+                    <p class="fa-solid text-purple-400 fa-camera"></p>
+                    <p>Camera</p>
+                </button>
+                <button class="w-full active:opacity-50 flex flex-row items-center space-x-4 px-4 py-3 text-slate-200">
+                    <p class="fa-solid fa-cloud text-cyan-400"></p>
+                    <p>Cloud</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const colors = [
+        "green",
+        "purple",
+        "blue",
+        "yellow",
+        "amber",
+        "orange",
+        "pink",
+        "indigo",
+    ];
+    let isShowMenu = false;
+    let horizontalScroll = document.getElementById("horizontal-scroll");
+    let sideMenu = document.getElementById("side-menu");
+    let buttonMenu = document.getElementById("button-menu");
+    let itemContainerHScroll = document.createElement("div");
+    itemContainerHScroll.classList = "flex flex-row items-center space-x-4 p-4";
+    sideMenu.classList =
+        "absolute z[99] left-0  bottom-0 flex flex-col items-center top-0 sm:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
+
+    let itemContainerGrid = document.getElementById("grid-container");
+
+    colors.forEach((e) => {
+        itemContainerHScroll.innerHTML =
+            itemContainerHScroll.innerHTML +
+            `<div class="h-[160px] w-[200px] bg-` +
+            e +
+            `-500 rounded-xl"/>`;
+
+        itemContainerGrid.innerHTML =
+            itemContainerGrid.innerHTML +
+            `<div class="h-[200px] rounded-xl bg-` +
+            e +
+            `-500"></div>`;
+    });
+    horizontalScroll.append(itemContainerHScroll);
+
+    window.addEventListener("click", e => {
+        console.log(e.target)
+        if (buttonMenu === e.target) {
+            sideMenu.classList =
+                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 sm:top-[58px] bg-slate-900 w-[200px] translate-x transition ease-in-out transition-all duration-1000";
+            isShowMenu = true;
+        } else if (!sideMenu.contains(e.target)) {
+            sideMenu.classList =
+                "absolute z[99] p-3 left-0 bottom-0 flex flex-col items-center top-0 sm:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-1000";
+            isShowMenu = false;
+        }
+    });
+</script>
+
+</html>

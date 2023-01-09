@@ -139,6 +139,12 @@ const App = async () => {
       colorBg: "bg-slate-200",
       colorFg: "text-slate-600",
     }),
+    await SectionCard({
+      headerTitle: "TEMPLATES",
+      data: "./data_template.json",
+      colorBg: "bg-slate-600",
+      colorFg: "text-slate-300",
+    }),
     FooterCard(),
   ];
   return Container(children);
