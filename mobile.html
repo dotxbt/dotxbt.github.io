@@ -60,7 +60,7 @@
 
 <body>
     <div
-        class="w-full h-full md:h-auto md:aspect-[10/20] relative shadow-xl m-0 md:m-4 md:rounded-3xl overflow-hidden max-w-md bg-slate-900">
+        class="w-full h-full md:h-auto md:aspect-[10/20] relative shadow-xl m-0 md:m-4 md:rounded-[42px] overflow-hidden max-w-md bg-slate-900">
         <div class="p-4 bg-black hidden md:flex">
             <p class="text-white w-full text-center">Mobile Layout</p>
         </div>
@@ -76,12 +76,18 @@
                 </div>
             </div>
             <div class="p-4">
-                <div class="aspect-[9/5.5] w-full bg-amber-500 rounded-xl"></div>
+                <div class="aspect-[9/5.5] w-full bg-pink-500 rounded-xl flex flex-col items-center justify-center">
+                    <p class="fa-solid fa-address-card text-slate-800 text-[100px]"></p>
+                </div>
             </div>
             <p class="text-slate-300 text-lg font-bold p-3">Horizontal Scroll</p>
             <div class="w-full flex overflow-x-auto scroll-smooth" id="horizontal-scroll"></div>
             <p class="text-slate-300 text-lg font-bold p-3 mt-4">Grid Item</p>
             <div class="grid grid-cols-2 gap-4 p-4" id="grid-container"></div>
+            <p class="text-slate-300 text-lg font-bold p-3 mt-4">List Item</p>
+            <div id="list-container" class="flex flex-col items-center justify-start space-y-4 p-4"></div>
+            <p class="text-slate-300 text-lg font-bold p-3">Item H-Scroll</p>
+            <div class="w-full flex overflow-x-auto scroll-smooth" id="hscroll-container"></div>
         </div>
         <div id="side-menu">
             <div class="h-[100px] w-[100px] m-4 rounded-full bg-indigo-500"></div>
@@ -112,62 +118,14 @@
                 <p>Cloud</p>
             </button>
         </div>
-        <div class="px-2 bg-black absolute w-full text-sm flex flex-row items-center justify-around bottom-0 hidden md:flex h-[46px]">
+        <div
+            class="px-2 bg-black absolute w-full text-sm flex flex-row items-center justify-around bottom-0 hidden md:flex h-[46px]">
             <p class="text-white fa-solid fa-play rotate-180"></p>
             <p class="text-white fa-solid fa-stop"></p>
             <p class="text-white fa-solid fa-bars"></p>
         </div>
     </div>
+    <script type="text/javascript" src="./mobile.js"></script>
 </body>
-<script>
-    const colors = [
-        "green",
-        "purple",
-        "blue",
-        "yellow",
-        "amber",
-        "orange",
-        "pink",
-        "indigo",
-    ];
-    let isShowMenu = false;
-    let horizontalScroll = document.getElementById("horizontal-scroll");
-    let sideMenu = document.getElementById("side-menu");
-    let buttonMenu = document.getElementById("button-menu");
-    let itemContainerHScroll = document.createElement("div");
-    itemContainerHScroll.classList = "flex flex-row items-center space-x-4 p-4";
-    sideMenu.classList =
-        "absolute z[99] left-0  bottom-0 md:bottom-[46px] flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-500";
-
-    let itemContainerGrid = document.getElementById("grid-container");
-
-    colors.forEach((e) => {
-        itemContainerHScroll.innerHTML =
-            itemContainerHScroll.innerHTML +
-            `<div class="h-[160px] w-[200px] bg-` +
-            e +
-            `-500 rounded-xl"/>`;
-
-        itemContainerGrid.innerHTML =
-            itemContainerGrid.innerHTML +
-            `<div class="h-[200px] rounded-xl bg-` +
-            e +
-            `-500"></div>`;
-    });
-    horizontalScroll.append(itemContainerHScroll);
-
-    window.addEventListener("click", e => {
-        console.log(e.target)
-        if (buttonMenu === e.target) {
-            sideMenu.classList =
-                "absolute z[99] p-3 left-0 bottom-0 md:bottom-[46px] flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] translate-x transition ease-in-out transition-all duration-500";
-            isShowMenu = true;
-        } else if (!sideMenu.contains(e.target)) {
-            sideMenu.classList =
-                "absolute z[99] p-3 left-0 bottom-0 md:bottom-[46px] flex flex-col items-center top-0 md:top-[58px] bg-slate-900 w-[200px] -translate-x-full transition ease-in-out transition-all duration-500";
-            isShowMenu = false;
-        }
-    });
-</script>
 
 </html>
