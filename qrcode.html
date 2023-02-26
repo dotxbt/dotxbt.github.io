@@ -34,7 +34,7 @@
         </select>
         <button onclick="onClick()" class="px-4 py-3 rounded-md bg-blue-600 text-white font-bold w-full">Generate QR
             Code</button>
-        <div class="relative w-full text-white">
+        <div class="relative w-full text-white p-4" id="qrcontainer">
             <div class="w-full aspect-ratio[1/1] self-center" id="qrcode"></div>
             <button id="pngbutton" class="absolute right-0 top-0 p-2 bg-cyan-500">PNG</button>
         </div>
@@ -45,7 +45,8 @@
     <script type="text/javascript">
         const code = document.getElementById("qrcode");
         const pngButton = document.getElementById("pngbutton");
-        code.className = "h-0 overflow-hidden opacity-0";
+        const qrContainer = document.getElementById("qrcontainer");
+        code.className = "h-0 overflow-hidden opacity-0 p-0";
         pngButton.className = "h-0 overflow-hidden opacity-0";
         class WifiQrCode {
             constructor(ssid, password, hidden, method) {
@@ -96,7 +97,8 @@
             );
             qrcode.clear();
             qrcode.makeCode(wifi.getWifi());
-            code.className = "w-full aspect-square opacity-100 transition-all ease-in-out duration-700 bg-white rounded-lg p-4";
+            code.className = "w-full aspect-square opacity-100 transition-all ease-in-out duration-700";
+            qrContainer.className = "p-4 flex flex-col relative text-white items-center justify-center rounded-lg bg-white w-full transition-all ease-in-out duration-700";
         }
     </script>
 </body>
