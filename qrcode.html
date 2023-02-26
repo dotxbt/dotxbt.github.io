@@ -38,9 +38,6 @@
             <div class="w-full aspect-ratio[1/1] self-center" id="qrcode"></div>
         </div>
     </div>
-
-
-    </form>
     <script type="text/javascript">
         const code = document.getElementById("qrcode");
         const qrContainer = document.getElementById("qrcontainer");
@@ -77,7 +74,7 @@
             );
             qrcode.clear();
             qrcode.makeCode(wifi.getWifi());
-            code.className = "w-full aspect-square opacity-100 transition-all ease-in-out duration-700";
+            code.className = "w-full aspect-square  opacity-100 transition-all ease-in-out duration-700";
             qrContainer.className = "p-4 flex flex-col relative text-white items-center justify-center rounded-lg bg-white w-full transition-all ease-in-out duration-700";
         }
     </script>
