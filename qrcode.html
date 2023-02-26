@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" decriptions="Sabituddin Bigbang">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>WiFi QR Generator</title>
+</head>
+
+<body class="flex flex-col items-center w-full text-slate-300 bg-slate-900 space-y-4">
+    <h1 class="text-2xl md:text-3xl font-bold mt-6">WiFi QR Generator</h1>
+    <div
+        class="flex flex-col items-center w-full max-w-md self-center space-y-6 p-6 text-slate-700 font-medium text-lg rounded-3xl">
+        <input id="ssidId" name="ssid" placeholder="SSID" type="text"
+            class="px-4 py-3 w-full rounded-md bg-slate-100 focus:outline-none bg-slate-100" />
+        <input id="passwordId" name="password" placeholder="Password" type="password"
+            class="px-4 py-3 w-full rounded-md bg-slate-100 focus:outline-none bg-slate-100" />
+        <div class="flex flex-row items-center w-full space-x-4 text-slate-200">
+            <input id="hiddenId" name="hidden" type="checkbox" class="text-[32px]" />
+            <label>Hidden</label>
+        </div>
+        <select id="methodId" name="hidden" type="checkbox"
+            class="px-4 py-3 w-full rounded-md bg-slate-100 focus:outline-none bg-slate-100">
+            <option value="nopass">No Password</option>
+            <option value="WEP">WEP</option>
+            <option value="WPA">WPA</option>
+            <option value="WPA2-EAP">WPA2-EAP</option>
+        </select>
+        <button onclick="onClick()" class="px-4 py-3 rounded-md bg-blue-600 text-white font-bold w-full">Generate QR
+            Code</button>
+        <div class="relative w-full text-white">
+            <div class="w-full aspect-ratio[1/1] self-center" id="qrcode"></div>
+            <button id="pngbutton" class="absolute right-0 top-0 p-2 bg-cyan-500">PNG</button>
+        </div>
+    </div>
+
+
+    </form>
+    <script type="text/javascript">
+        const code = document.getElementById("qrcode");
+        const pngButton = document.getElementById("pngbutton");
+        code.className = "h-0 overflow-hidden opacity-0";
+        pngButton.className = "h-0 overflow-hidden opacity-0";
+        class WifiQrCode {
+            constructor(ssid, password, hidden, method) {
+                this.ssid = ssid;
+                this.password = password;
+                this.hidden = hidden;
+                this.method = method;
+            }
+
+            getWifi() {
+                return `WIFI:T:${this.method};S:${this.ssid};P:${this.password};H:${this.hidden};;`;
+            }
+        }
+
+        const qrcode = new QRCode("qrcode", {
+            height: 400,
+            width: 400,
+            colorDark: "#000000",
+            colorLight: "#ffffff00",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        code.onmouseenter = () => {
+            pngButton.className = "absolute w-[64px] text-center -right-[64px] rounded-r-lg top-[8px] p-2 bg-blue-600 font-bold";
+        }
+
+        pngButton.onmouseenter = () => {
+            pngButton.className = "absolute w-[64px] font-bold text-center -right-[64px] rounded-r-lg top-[8px] p-2 bg-blue-600";
+        }
+
+        code.onmouseleave = () => {
+            setTimeout(() => {
+                pngButton.className = "h-0 overflow-hidden opacity-0";
+            }, 2000)
+        }
+
+        pngButton.onclick = () => {
+            pngButton.className = "h-0 overflow-hidden opacity-0";
+        }
+
+        const onClick = () => {
+            const el = document.getElementById("methodId");
+            const wifi = new WifiQrCode(
+                document.getElementById("ssidId").value ?? "",
+                document.getElementById("passwordId").value ?? "",
+                document.getElementById("hiddenId").checked ?? false,
+                el.options[el.options.selectedIndex].value ?? "",
+            );
+            qrcode.clear();
+            qrcode.makeCode(wifi.getWifi());
+            code.className = "w-full aspect-square opacity-100 transition-all ease-in-out duration-700 bg-white rounded-lg p-4";
+        }
+    </script>
+</body>
+
+</html>

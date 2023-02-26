@@ -4,5 +4,11 @@
     "title": "Mobile Template",
     "color": "text-purple-500",
     "url": "href='/mobile'"
+  },
+  {
+    "icon": "fa fa-qrcode",
+    "title": "WiFi QR Generator",
+    "color": "text-cyan-500",
+    "url": "href='/qrcode'"
   }
 ]
