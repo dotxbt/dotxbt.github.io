@@ -36,7 +36,6 @@
             Code</button>
         <div class="relative w-full text-white p-4" id="qrcontainer">
             <div class="w-full aspect-ratio[1/1] self-center" id="qrcode"></div>
-            <button id="pngbutton" class="absolute right-0 top-0 p-2 bg-cyan-500">PNG</button>
         </div>
     </div>
 
@@ -44,10 +43,9 @@
     </form>
     <script type="text/javascript">
         const code = document.getElementById("qrcode");
-        const pngButton = document.getElementById("pngbutton");
         const qrContainer = document.getElementById("qrcontainer");
         code.className = "h-0 overflow-hidden opacity-0 p-0";
-        pngButton.className = "h-0 overflow-hidden opacity-0";
+
         class WifiQrCode {
             constructor(ssid, password, hidden, method) {
                 this.ssid = ssid;
@@ -68,24 +66,6 @@
             colorLight: "#ffffff00",
             correctLevel: QRCode.CorrectLevel.H
         });
-
-        code.onmouseenter = () => {
-            pngButton.className = "absolute w-[64px] text-center -right-[64px] rounded-r-lg top-[8px] p-2 bg-blue-600 font-bold";
-        }
-
-        pngButton.onmouseenter = () => {
-            pngButton.className = "absolute w-[64px] font-bold text-center -right-[64px] rounded-r-lg top-[8px] p-2 bg-blue-600";
-        }
-
-        code.onmouseleave = () => {
-            setTimeout(() => {
-                pngButton.className = "h-0 overflow-hidden opacity-0";
-            }, 2000)
-        }
-
-        pngButton.onclick = () => {
-            pngButton.className = "h-0 overflow-hidden opacity-0";
-        }
 
         const onClick = () => {
             const el = document.getElementById("methodId");
