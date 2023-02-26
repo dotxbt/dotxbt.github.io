@@ -61,8 +61,8 @@
         }
 
         const qrcode = new QRCode("qrcode", {
-            height: 400,
-            width: 400,
+            height: code.offsetWidth,
+            width: code.offsetWidth,
             colorDark: "#000000",
             colorLight: "#ffffff00",
             correctLevel: QRCode.CorrectLevel.H
