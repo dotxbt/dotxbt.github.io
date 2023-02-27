@@ -1,4 +1,4 @@
-document.body.classList = "bg-slate-900"
+document.body.classList = "bg-slate-900";
 // Initial State
 document.getElementById("store").innerHTML = `
   <div class="flex flex-col h-screen w-screen bg-slate-800 text-slate-300 justify-center items-center">
@@ -10,7 +10,7 @@ document.getElementById("store").innerHTML = `
 const CardComponent = () => {
   const container = document.createElement("div");
   container.classList =
-    "flex flex-col cursor-pointer items-center active:opacity-50 active:scale-90 transition-all ease-in-out duration-500 w-full overflow-hidden rounded-xl bg-gray-800";
+    "flex flex-col cursor-pointer items-center active:opacity-50 active:scale-90 transition-all ease-in-out duration-500 w-full overflow-hidden rounded-xl bg-slate-800";
 
   const image = document.createElement("img");
   image.classList = "object-cover w-full aspect-square";
@@ -19,7 +19,7 @@ const CardComponent = () => {
 
   const text = document.createElement("p");
   text.className = "text-slate-300 text-md p-2";
-  text.innerText = "Mobile Legend";
+  text.innerText = "Mobile Legends";
 
   container.appendChild(image);
   container.appendChild(text);
@@ -78,7 +78,8 @@ const settingNavbar = () => {
     "sticky top-0 left-0 w-full flex flex-row items-center justify-center h-[72px] bg-slate-900/90  shadow-md shadow-black/20 z-[99]";
 
   const navContainer = document.createElement("div");
-  navContainer.classList = "flex flex-row w-full max-w-5xl items-center justify-between";
+  navContainer.classList =
+    "flex flex-row w-full max-w-5xl items-center justify-between";
   navContainer.innerHTML = `<p class="text-3xl font-bold px-6 text-slate-300">Gaming Store<p><div class="px-6 font-bold text-white">Top Up<div>`;
   navbar.append(navContainer);
 };
@@ -102,30 +103,11 @@ const GridContainer = (children) => {
 // Document ROOT
 const RootApp = async () => {
   var root = document.getElementById("store");
-  const app = GridContainer([
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-    CardComponent(),
-  ]);
+  const data = [];
+  for (let i = 0; i < 50; i++) {
+    data.push(CardComponent());
+  }
+  const app = GridContainer(data);
   root.innerHTML = "";
   root.appendChild(app);
 };
