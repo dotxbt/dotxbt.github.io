@@ -14,7 +14,7 @@ const LinkCard = async () => {
   card.classList = `flex flex-col min-h-screen w-full justify-center items-center`;
   cardChild.classList = `flex flex-col space-y-6 w-full items-center p-4 max-w-sm mb-8`;
   const logo = document.createElement("img");
-  logo.classList = "h-[240px] w-[240px] object-cover my-6 shadow-xl rounded-full drop-shadow-2xl box-shadow-xl";
+  logo.classList = "h-[220px] w-[220px] object-cover my-6 shadow-xl rounded-full drop-shadow-2xl box-shadow-xl";
   logo.src = "./deli.png";
   card.appendChild(logo);
   await fetch("./deli.json")
