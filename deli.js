@@ -23,7 +23,7 @@ const LinkCard = async () => {
       cardChild.innerHTML = data
         ? data.map(
             (e) => `
-      <a  href="${e.url}" target="_blank" active:opacity-50 rel="noopener noreferrer" class="flex flex-row cursor-pointer w-full shadow-2xl items-center bg-white/70 rounded-full p-3 space-x-4 max-w-[300px]">
+      <a  href="${e.url}" target="_blank" active:opacity-50 rel="noopener noreferrer" class="flex flex-row cursor-pointer w-full shadow-2xl items-center bg-white/70 rounded-full p-3 space-x-6 max-w-[300px]">
         <img class=" h-[46px] w-[46px] object-contain" src="${e.logo}" width={64} height={64}/>
         <p class="text-[24px] text-slate-800 font-bold flex-1 text-start">${e.title}</p>
       </a> 
