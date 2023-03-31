@@ -37,7 +37,7 @@ const CardComponent = () => {
 const showDialog = (show, data) => {
   const dialog = document.getElementById("dialog");
   dialog.classList = `fixed flex flex-col items-center p-4 justify-center top-0 bottom-0 w-full ${
-    show ? "bg-black/60 z-[9999]" : "bg-transparent -z-[1]"
+    show ? "bg-black/60 z-[9999]" : "bg-transparent -z-[5]"
   } transition-all ease-in-out duration-700`;
   const dialogContainer = document.getElementById("dialog-container");
 

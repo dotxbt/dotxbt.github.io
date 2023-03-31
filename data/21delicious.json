@@ -1,0 +1,22 @@
+[
+    {
+        "title":"@21delicious",
+        "url": "https://www.tiktok.com/@21delicious",
+        "logo": "./assets/tiktok.png"
+    }, 
+    {
+        "title":"@21delicious",
+        "url": "https://shopee.co.id/21delicious",
+        "logo": "./assets/shopee.png"
+    },
+    {
+        "title":"@21deliciouss",
+        "url": "https://www.instagram.com/21deliciouss/",
+        "logo": "./assets/ig.png"
+    },
+    {
+        "title":"085780172137",
+        "url": "https://wa.me/+6285780172137",
+        "logo": "./assets/wa.png"
+    }
+]

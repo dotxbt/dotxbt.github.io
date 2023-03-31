@@ -19,7 +19,7 @@ const ProfileCard = async () => {
   const cardParent = document.createElement("div");
   const card = document.createElement("div");
   card.classList = `flex flex-col min-h-screen justify-center items-center p-4`;
-  await fetch("./asset.json")
+  await fetch("./data/asset.json")
     .then((res) => res.json())
     .then((data) => {
       card.innerHTML = `
@@ -47,7 +47,7 @@ const SocMedCard = async () => {
   card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 bg-slate-700 w-full md:w-auto md:bg-transparent`;
   cardChild.classList = `max-w-[1360px] flex flex-col w-full justify-around items-start p-4 flex-1`;
 
-  await fetch("./data_socmed.json")
+  await fetch("./data/socmed.json")
     .then((res) => res.json())
     .then((data) => {
       cardChild.innerHTML = data.map(
@@ -123,25 +123,25 @@ const App = async () => {
     await HeaderCard(),
     await SectionCard({
       headerTitle: "ACTIVITIES",
-      data: "./data_activity.json",
+      data: "./data/activity.json",
       colorBg: "bg-slate-600",
       colorFg: "text-slate-300",
     }),
     await SectionCard({
       headerTitle: "LANGUAGES | INTERPRETERS",
-      data: "./data_language.json",
+      data: "./data/language.json",
       colorBg: "bg-slate-100",
       colorFg: "text-slate-600",
     }),
     await SectionCard({
       headerTitle: "FRAMEWORKS | LIBRARIES",
-      data: "./data_framework.json",
+      data: "./data/framework.json",
       colorBg: "bg-slate-200",
       colorFg: "text-slate-600",
     }),
     await SectionCard({
       headerTitle: "TEMPLATES",
-      data: "./data_template.json",
+      data: "./data/template.json",
       colorBg: "bg-slate-600",
       colorFg: "text-slate-300",
     }),
