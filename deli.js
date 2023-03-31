@@ -1,5 +1,5 @@
 document.body.classList =
-  "bg-gradient-to-br from-violet-500 to-fuchsia-500 m-0 p-0";
+  "bg-gradient-to-br from-fuchsia-500 via-purple-500 to-pink-500 m-0 p-0";
 // Initial State
 document.getElementById("root").innerHTML = `
   <div class="flex flex-col h-screen w-screen bg-slate-800 text-slate-300 justify-center items-center">
@@ -14,7 +14,7 @@ const LinkCard = async () => {
   card.classList = `flex flex-col min-h-screen w-full justify-center items-center`;
   cardChild.classList = `flex flex-col space-y-6 w-full items-center p-4 max-w-sm mb-8`;
   const logo = document.createElement("img");
-  logo.classList = "h-[200px] w-[200px] object-cover my-6 shadow-xl rounded-full drop-shadow-2xl box-shadow-xl";
+  logo.classList = "h-[240px] w-[240px] object-cover my-6 shadow-xl rounded-full drop-shadow-2xl box-shadow-xl";
   logo.src = "./deli.png";
   card.appendChild(logo);
   await fetch("./deli.json")
@@ -23,7 +23,7 @@ const LinkCard = async () => {
       cardChild.innerHTML = data
         ? data.map(
             (e) => `
-      <a  href="${e.url}" target="_blank" active:opacity-50 rel="noopener noreferrer" class="flex flex-row cursor-pointer w-full shadow-2xl items-center bg-white/70 rounded-full p-3 space-x-6 max-w-[300px]">
+      <a  href="${e.url}" target="_blank" active:opacity-50 rel="noopener noreferrer" class="flex flex-row cursor-pointer w-full shadow-2xl items-center bg-white/60 rounded-full p-3 space-x-6 max-w-[300px]">
         <img class=" h-[46px] w-[46px] object-contain" src="${e.logo}" width={64} height={64}/>
         <p class="text-[24px] text-slate-800 font-bold flex-1 text-start">${e.title}</p>
       </a> 
