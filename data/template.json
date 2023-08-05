@@ -16,5 +16,11 @@
     "title": "Gaming Store",
     "color": "text-pink-500",
     "url": "href='/store'"
+  },
+  {
+    "icon": "fa fa-certificate",
+    "title": "Maulid Al-Barzanji",
+    "color": "text-teal-500",
+    "url": "href='/albarzanji'"
   }
 ]
