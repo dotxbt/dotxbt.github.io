@@ -27,7 +27,12 @@
     {
       "icon": "fa-solid fa-volleyball",
       "title": "Volleyball",
-      "color": "text-blue-500"
+      "color": "text-purple-500"
+    },
+    {
+      "icon": "fa-solid fa-brain",
+      "title": "Healing",
+      "color": "text-lime-600"
     },
     {
       "icon": "fa-solid fa-hands-praying",

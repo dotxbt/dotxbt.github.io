@@ -47,7 +47,6 @@ const ProfileCard = async () => {
       <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-pink-500 hover:text-slate-800 border-pink-500 rounded-xl m-2 text-pink-500">EDC Machine</div>
       <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-sky-500 hover:text-slate-800 border-sky-500 rounded-xl m-2 text-sky-600">IoT</div>
     </div>
-    
     `;
     });
   cardParent.append(card);
@@ -120,6 +119,24 @@ const SectionCard = async ({ headerTitle, data, colorBg, colorFg }) => {
   return card;
 };
 
+const MarqueeComponent = async () => {
+  const cardChild = document.createElement("div");
+  cardChild.classList = `w-full bg-slate-900`;
+  cardChild.innerHTML = `<marquee class="w-full p-0">
+  <div class="flex flex-row space-x-4 items-center pt-1">
+      <p class="text-slate-300">Open for Application Development positions :</p>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-green-500 hover:text-slate-800 border-green-500 rounded-xl m-2 text-green-500">Mobile</div>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-purple-500 hover:text-slate-800 border-purple-500 rounded-xl m-2 text-purple-500">Web</div>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-amber-500 hover:text-slate-800 border-amber-500 rounded-xl m-2 text-amber-600">Backend</div>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-pink-500 hover:text-slate-800 border-pink-500 rounded-xl m-2 text-pink-500">EDC Machine</div>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-sky-500 hover:text-slate-800 border-sky-500 rounded-xl m-2 text-sky-600">IoT</div>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-teal-500 hover:text-slate-800 border-teal-500 rounded-xl m-2 text-teal-600">Frontend Engineer</div>
+      <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-blue-500 hover:text-slate-800 border-blue-500 rounded-xl m-2 text-blue-600">Backend Engineer</div>
+  </div>
+  </marquee>`;
+  return cardChild;
+};
+
 // HELPER
 const Container = (children) => {
   let appContainer = document.createElement("div");
@@ -134,6 +151,7 @@ const Container = (children) => {
 const App = async () => {
   let children = [
     await HeaderCard(),
+    await MarqueeComponent(),
     await SectionCard({
       headerTitle: "ACTIVITIES",
       data: "./data/activity.json",
