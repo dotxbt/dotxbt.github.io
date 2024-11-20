@@ -9,7 +9,7 @@ document.getElementById("root").innerHTML = `
 // HEADER COMPONENT
 const HeaderCard = async () => {
   const card = document.createElement("div");
-  card.classList = `flex flex-col md:flex-row min-h-screen w-full justify-center items-center flex-1 bg-slate-800`;
+  card.classList = `flex flex-col md:flex-row min-h-screen w-full justify-center items-center flex-1 bg-slate-900`;
   card.appendChild(await ProfileCard());
   card.appendChild(await SocMedCard());
   return card;
@@ -23,16 +23,18 @@ const ProfileCard = async () => {
     .then((res) => res.json())
     .then((data) => {
       card.innerHTML = `
-    <div class="relative flex flex-col">
-       <img class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] object-cover rounded-full bg-gradient-to-tl from-pink-300 via-cyan-300 to-violet-300 p-3 md:p-4 m-10" 
+    <div class="relative flex flex-col relative items-center justify-center">
+      <div class="w-[300px] h-[300px] md:w-[400px] md:h-[400px] absolute"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span></div>
+      <div class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] absolute"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span></div>
+       <img class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] object-cover box-shadow-xl drop-shadow-xl rounded-full bg-gradient-to-tl from-pink-500 via-cyan-500 to-violet-500 p-3 md:p-4 m-10" 
         src="${data.image}"
        />
        <img class="w-[220px] absolute h-[220px] md:w-[300px] md:h-[300px] rounded-full p-3 md:p-4 m-10" 
         src="./assets/otw.png"
        />
-       <div class="flex md:h-[46px] md:w-[46px] h-[36px] w-[36px] absolute md:top-[240px] md:left-[288px] top-[190px] left-[218px]">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full md:h-[46px] md:w-[46px] h-[36px] w-[36px] bg-green-500"></span>
+       <div class="flex flex-col items-center justify-center md:h-[56px] md:w-[56px] h-[36px] w-[36px] absolute md:top-[240px] md:left-[278px] top-[190px] left-[218px]">
+          <span class="animate-ping delay-700 absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full w-full h-full bg-green-500"></span>
         </div>
       </div>
     <div class="flex flex-col items-center pb-0 md:pb-10">
@@ -56,7 +58,7 @@ const ProfileCard = async () => {
 const SocMedCard = async () => {
   const card = document.createElement("div");
   const cardChild = document.createElement("div");
-  card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 bg-slate-700 w-full md:w-auto md:bg-transparent`;
+  card.classList = `flex flex-col justify-center items-start h-auto md:h-full p-4 md:p-8 w-full md:w-auto`;
   cardChild.classList = `max-w-[1360px] flex flex-col w-full justify-around items-start p-4 flex-1`;
 
   await fetch("./data/socmed.json")
@@ -78,7 +80,7 @@ const SocMedCard = async () => {
 
 const FooterCard = () => {
   const card = document.createElement("div");
-  card.classList = `w-full bg-slate-800 text-center text-md text-slate-300 py-6 px-10`;
+  card.classList = `w-full bg-black/20 text-center text-md text-slate-300 py-6 px-10`;
   card.innerHTML = `
     Made with love | Sabituddin Bigbang @ ${new Date().getFullYear()} | All Right Reserved
   `;
@@ -121,7 +123,7 @@ const SectionCard = async ({ headerTitle, data, colorBg, colorFg }) => {
 
 const MarqueeComponent = async () => {
   const cardChild = document.createElement("div");
-  cardChild.classList = `w-full bg-slate-900`;
+  cardChild.classList = `w-full bg-slate-700/30`;
   cardChild.innerHTML = `<marquee class="w-full p-0">
   <div class="flex flex-row space-x-4 items-center pt-1">
       <p class="text-slate-300">Open for Application Development positions :</p>
@@ -140,7 +142,7 @@ const MarqueeComponent = async () => {
 // HELPER
 const Container = (children) => {
   let appContainer = document.createElement("div");
-  appContainer.classList = "flex flex-1 flex-col items-center bg-white";
+  appContainer.classList = "flex flex-1 flex-col items-center bg-slate-900";
   for (let i = 0; i < children.length; i++) {
     appContainer.appendChild(children[i]);
   }
@@ -155,26 +157,26 @@ const App = async () => {
     await SectionCard({
       headerTitle: "ACTIVITIES",
       data: "./data/activity.json",
-      colorBg: "bg-slate-600",
-      colorFg: "text-slate-300",
+      colorBg: "bg-slate-800/40",
+      colorFg: "text-slate-400",
     }),
     await SectionCard({
       headerTitle: "LANGUAGES | INTERPRETERS",
       data: "./data/language.json",
-      colorBg: "bg-slate-100",
-      colorFg: "text-slate-800",
+      colorBg: "bg-slate-900",
+      colorFg: "text-slate-400",
     }),
     await SectionCard({
       headerTitle: "FRAMEWORKS | LIBRARIES",
       data: "./data/framework.json",
-      colorBg: "bg-slate-200",
-      colorFg: "text-slate-800",
+      colorBg: "bg-slate-800/40",
+      colorFg: "text-slate-400",
     }),
     await SectionCard({
       headerTitle: "TEMPLATES",
       data: "./data/template.json",
-      colorBg: "bg-slate-600",
-      colorFg: "text-slate-300",
+      colorBg: "bg-slate-900",
+      colorFg: "text-slate-400",
     }),
     FooterCard(),
   ];
