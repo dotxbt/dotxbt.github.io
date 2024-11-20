@@ -1,7 +1,7 @@
 [
   {
     "title": "Tailwind CSS",
-    "logo": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg"
+    "logo": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg"
   },
   {
     "title": "Styled Component",
@@ -21,7 +21,7 @@
   },
   {
     "title": "Android",
-    "logo": "https://developer.android.com/static/images/brand/Android_Robot_200.png"
+    "logo": "https://icon.icepanel.io/Technology/png-shadow-512/Android-Studio.png"
   },
   {
     "title": "Flutter",
@@ -29,7 +29,7 @@
   },
   {
     "title": "BloC",
-    "logo": "https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/bloc_logo_full.png"
+    "logo": "https://bloclibrary.dev/_astro/light-bloc-logo.Cf4Oyfak.svg"
   },
   {
     "title": "React Native",
@@ -46,5 +46,13 @@
   {
     "title": "Arduino",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg"
+  },
+  {
+    "title": "Fiber Golang",
+    "logo": "https://miro.medium.com/v2/resize:fit:1364/1*5gMIBFvpNJivfyqv1ApwzA.png"
+  },
+  {
+    "title": "Java Springboot",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8i4zPog-0j0JR_yZglxPhTPZXxN2iMTQ3Dw&s"
   }
 ]

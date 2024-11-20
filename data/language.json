@@ -49,7 +49,12 @@
   {
     "icon": " ",
     "title": "Free Pascal",
-    "color": "text-Indigo-500",
+    "color": "text-indigo-500",
     "logo": "https://www.freepascal.org/pic/logo.gif"
+  },{
+    "icon": " ",
+    "title": "Rust",
+    "color": "text-amber-500",
+    "logo": "https://imgcdn.sigstick.com/3aof1uO8djechjc2XRDE/1.png"
   }
 ]
