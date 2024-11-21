@@ -1,7 +1,7 @@
 // Initial State
 document.getElementById("root").innerHTML = `
-  <div class="flex flex-col h-screen w-screen bg-slate-800 text-slate-300 justify-center items-center">
-  <i class="fa-solid fa-spinner text-[64px] text-pink-400 animate-spin mb-4"></i>
+  <div class="flex flex-col h-screen w-screen bg-slate-900 text-slate-400 justify-center items-center">
+  <i class="fa-solid fa-spinner text-[64px] text-lime-400 animate-spin mb-4"></i>
     <p>Please wait...</p>
   </div>
 `;
