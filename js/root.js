@@ -24,8 +24,8 @@ const ProfileCard = async () => {
     .then((data) => {
       card.innerHTML = `
     <div class="relative flex flex-col relative items-center justify-center">
-      <div class="w-[300px] h-[300px] md:w-[400px] md:h-[400px] absolute"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span></div>
-      <div class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] absolute"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span></div>
+      <div class="w-[240px] h-[240px] md:w-[400px] md:h-[400px] absolute"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span></div>
+      <div class="w-[210px] h-[210px] md:w-[300px] md:h-[300px] absolute"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span></div>
        <img class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] object-cover box-shadow-xl drop-shadow-xl rounded-full bg-gradient-to-tl from-pink-500 via-cyan-500 to-violet-500 p-3 md:p-4 m-10" 
         src="${data.image}"
        />
@@ -42,7 +42,7 @@ const ProfileCard = async () => {
         <p class="text-lg mt-2 italic text-slate-300">"Do what you love, love what you do"</p>
     </div>
     <h1 class="text-slate-300 mt-8 p-2">Open for Application Development positions :</h1>
-    <div class="flex flex-wrap w-full max-w-[320px] font-medium">
+    <div class="flex flex-wrap w-full md:max-w-[320px] font-medium">
       <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-green-500 hover:text-slate-800 border-green-500 rounded-xl m-2 text-green-500">Mobile</div>
       <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-purple-500 hover:text-slate-800 border-purple-500 rounded-xl m-2 text-purple-500">Web</div>
       <div class="py-1 px-3 border-[1px] cursor-pointer hover:bg-amber-500 hover:text-slate-800 border-amber-500 rounded-xl m-2 text-amber-600">Backend</div>
