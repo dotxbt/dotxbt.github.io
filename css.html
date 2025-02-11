@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>EXPLORE CSS</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        background: #3c3a44;
+        font-family: "Orbitron", serif;
+      }
+      .list {
+        margin: 0 auto;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        padding: 8px 0px;
+        flex-direction: row;
+        overflow: auto;
+      }
+
+      .list::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      .list .item {
+        height: 200px;
+        min-width: 200px;
+        user-select: none;
+        display: flex;
+        padding: 0px 16px;
+        cursor: pointer;
+        background: #000000;
+        filter: brightness(0.6);
+        border-radius: 32px;
+        flex-shrink: 0;
+        margin: 8px;
+        align-items: center;
+        justify-content: center;
+        background-color: #1c1e1e;
+        font-size: 10em;
+        font-weight: bold;
+        line-height: 0;
+        color: white;
+      }
+
+      .list .item.active {
+        filter: brightness(1);
+        animation: smoothSelect 0.4s ease-in-out 1 both;
+        background-color: #e1ff00;
+        color: black;
+      }
+
+      .container {
+        width: 100%;
+        background-color: black;
+        min-height: calc(100vh - 232px);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container .text {
+        font-size: 24em;
+        font-weight: bolder;
+        line-height: 0;
+        letter-spacing: 0;
+        color: #e1ff00;
+        animation: introScale 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1
+          both;
+      }
+
+      @keyframes smoothSelect {
+        0% {
+          filter: brightness(0.5);
+        }
+        100% {
+          filter: brightness(1);
+          border-radius: 32px;
+        }
+      }
+
+      @keyframes introScale {
+        0% {
+          scale: 0.0;
+        }
+        70% {
+          scale: 2.0;
+        }
+        100% {
+          scale: 1.0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="text"></p>
+    </div>
+    <div class="list"></div>
+
+    <script>
+      const list = document.querySelector(".list");
+
+      // add item to list
+      for (let i = 0; i < 16; i++) {
+        const item = document.createElement("div");
+        item.classList = `item${i === 0 ? " active" : ""}`;
+        item.textContent = i + 1;
+        // add first item to container
+        i === 0 && addToContainer(i + 1);
+        item.addEventListener("click", onItemClick);
+        list.appendChild(item);
+      }
+
+      function onItemClick(item) {
+        const itemOld = document.querySelector(".list .item.active");
+        itemOld.classList.remove("active");
+        item.target.classList.add("active");
+        addToContainer(item.target.textContent);
+      }
+
+      function addToContainer(content) {
+        const container = document.querySelector(".container");
+        const text = document.createElement("p");
+        text.classList = "text";
+        text.textContent = content;
+        container.innerHTML = "";
+        container.appendChild(text);
+      }
+    </script>
+  </body>
+</html>
