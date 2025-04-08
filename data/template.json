@@ -1,5 +1,11 @@
 [
   {
+    "icon": "fa-solid fa-cart-shopping",
+    "title": "Order From Table (POS) [NEXTJS]",
+    "color": "text-amber-500",
+    "url": "href='https://nongqrong.vercel.app/store/kopikenangan/69'"
+  },
+  {
     "icon": "fa fa-mobile-phone",
     "title": "Mobile Template",
     "color": "text-purple-500",
