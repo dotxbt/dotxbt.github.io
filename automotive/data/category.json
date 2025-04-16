@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Matic",
+    "selected": true,
+    "path": "matic"
+  },
+  {
+    "id": 2,
+    "name": "Manual",
+    "selected": false,
+    "path": "manual"
+  },
+  {
+    "id": 3,
+    "name": "Sport",
+    "selected": false,
+    "path": "sport"
+  },
+  {
+    "id": 4,
+    "name": "Adventure",
+    "selected": false,
+    "path": "adventure"
+  },
+  {
+    "id": 5,
+    "name": "Classic",
+    "selected": false,
+    "path": "classic"
+  }
+]

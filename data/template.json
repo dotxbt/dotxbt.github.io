@@ -6,6 +6,12 @@
     "url": "href='https://nongqrong.vercel.app/store/kopikenangan/69'"
   },
   {
+    "icon": "fa-solid fa-truck",
+    "title": "Automotive",
+    "color": "text-indigo-400",
+    "url": "href='/automotive'"
+  },
+  {
     "icon": "fa fa-mobile-phone",
     "title": "Mobile Template",
     "color": "text-purple-500",
