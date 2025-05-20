@@ -7,9 +7,21 @@
   },
   {
     "icon": "fa-solid fa-car",
-    "title": "Automotive",
-    "color": "text-indigo-400",
+    "title": "Automotive Store",
+    "color": "text-red-500",
     "url": "href='/automotive'"
+  },
+  {
+    "icon": "fa-solid fa-volleyball",
+    "title": "Volleyball Score (OBS Green Screen)",
+    "color": "text-blue-600",
+    "url": "href='https://cometscore.vercel.app'"
+  },
+  {
+    "icon": "fa-solid fa-biohazard",
+    "title": "Zoom Number",
+    "color": "text-orange-400",
+    "url": "href='/template/zoom-number.html'"
   },
   {
     "icon": "fa fa-mobile-phone",

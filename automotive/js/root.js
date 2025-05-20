@@ -1,12 +1,13 @@
+import ProductSection from "./product/product.js";
+
 // STATE
 let categories = [];
 let selectedCategory = undefined;
+let productView = undefined;
 
 // LAYOUT
-const productContainer = document.createElement("div");
+
 const categoryContainer = document.createElement("div");
-productContainer.className =
-  "m-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 p-3 md:p-4 transition-all ease-in-out duration-1000 items-center w-full justify-center min-h-screen";
 const sidebarBarrier = document.createElement("div");
 sidebarBarrier.addEventListener("click", () => {
   showSidebar(false, sidebarContainer, sidebarBarrier);
@@ -18,36 +19,7 @@ sidebarContainer.className =
   "flex flex-col items-end justify-start space-y-3 min-w-[240px] bg-white p-4 max-w-full fixed top-0 right-0 bottom-0 h-full z-[9999999] translate-x-full transition-all duration-500 ease-in-out";
 
 // COMPONENTS
-function ProductItem(product) {
-  const c = document.createElement("div");
-  c.className =
-    "flex flex-col items-center justify-center bg-white rounded-2xl p-4 w-full";
-  const i = document.createElement("img");
-  i.src = product.image;
-  i.alt = "Product Image";
-  i.className =
-    "w-full object-cover transition-all ease-in-out delay-500 duration-700 rounded-t-lg";
-  c.appendChild(i);
-
-  const t1 = document.createElement("h2");
-  t1.innerText = product.name + " ";
-  t1.className = "text-xl font-bold mt-2";
-  c.appendChild(t1);
-
-  const t2 = document.createElement("p");
-  t2.innerText = product.price;
-  t2.className = "text-gray-700 mt-1";
-  c.appendChild(t2);
-
-  const b1 = document.createElement("button");
-  b1.innerText = "Add to Cart";
-  b1.className =
-    "bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-blue-600 transition duration-200";
-  c.appendChild(b1);
-  return c;
-}
-
-function CategoryButton(category, prefix="") {
+function CategoryButton(category, prefix = "") {
   const b = document.createElement("button");
   b.innerText = category.name;
   b.id = `${prefix}category-${category.id}`;
@@ -56,10 +28,9 @@ function CategoryButton(category, prefix="") {
   }`;
   b.addEventListener("click", () => {
     showSidebar(false, sidebarContainer, sidebarBarrier);
-    
+
     categories = categories.map((cat) => {
       if (cat.id === category.id) {
-        
         return { ...cat, selected: true };
       }
       return { ...cat, selected: false };
@@ -78,10 +49,10 @@ function CategoryButton(category, prefix="") {
       SidebarLayout();
       Category();
     });
-    
+
     // document.body.scrollTop = 0;
     // document.documentElement.scrollTop = 0;
-    ProductContainer(category.path);
+    productView =  ProductSection(category.path);
   });
   return b;
 }
@@ -93,7 +64,7 @@ const SidebarLayout = () => {
   t.className = "text-xl font-bold mt-2";
   sidebarContainer.appendChild(t);
   categories.forEach((category) => {
-    const b = CategoryButton(category,"side");
+    const b = CategoryButton(category, "side");
     sidebarContainer.appendChild(b);
   });
 };
@@ -158,7 +129,7 @@ const resizeCategory = (c) => {
     c.className =
       " flex-row m-auto space-x-4 text-center shadow-lg shadow-black/5 flex justify-center bg-white items-center p-2 sticky top-0 z-[99999] left-0";
     const p = document.createElement("p");
-    p.innerText =  selectedCategory.name;
+    p.innerText = selectedCategory.name;
     p.className = "text-xl flex-1 text-start px-4 font-medium text-slate-700";
     c.appendChild(p);
   } else {
@@ -179,29 +150,6 @@ const IconButton = () => {
     "px-4 py-2 font-medium cursor-pointer md:hidden rounded-lg hover:bg-gray-300 transition duration-200";
   bt.appendChild(icon);
   return bt;
-};
-
-const ProductContainer = (path) => {
-  productContainer.innerHTML =
-    "<div class='w-full h-full flex flex-col items-center justify-center'>Loading...</div>";
-  fetch("./data/" + path + ".json")
-    .then((res) => res.json())
-    .then((data) => {
-      productContainer.innerHTML = "";
-      if (data.length === 0) {
-        productContainer.innerHTML =
-          "<div class='w-full h-full flex flex-col items-center justify-center'>No Products Found</div>";
-        return;
-      }
-      productContainer.innerHTML = "";
-      data.forEach((product) => {
-        productContainer.appendChild(ProductItem(product));
-      });
-    })
-    .catch((_) => {
-      productContainer.innerHTML =
-        "<div class='w-full h-full text-center flex flex-col items-center justify-center'>Error Loading Products</div>";
-    });
 };
 
 const Banner = () => {
@@ -230,10 +178,10 @@ const runApps = async () => {
   selectedCategory = categories[0];
   Category();
   SidebarLayout();
-  ProductContainer("matic");
+  productView = ProductSection("matic");
   bd.appendChild(Banner());
   bd.appendChild(categoryContainer);
-  bd.appendChild(productContainer);
+  bd.appendChild(productView);
   bd.appendChild(sidebarBarrier);
   bd.appendChild(sidebarContainer);
 };
