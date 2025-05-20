@@ -80,7 +80,7 @@ const settingNavbar = () => {
   const navContainer = document.createElement("div");
   navContainer.classList =
     "flex flex-row w-full max-w-5xl items-center justify-between";
-  navContainer.innerHTML = `<p class="text-3xl font-bold px-6 text-slate-300">Gaming Store<p><div class="px-6 font-bold text-white">Top Up<div>`;
+  navContainer.innerHTML = `<div class='flex flex-col items-start px-6'><p class="text-3xl font-bold text-slate-300">Gaming Store<p><p class='text-red-500 text-[12pt]'>MLBB ID : 396136919(2370)</p></div> <div class="px-6 font-bold text-white">Top Up<div>`;
   navbar.append(navContainer);
 };
 
